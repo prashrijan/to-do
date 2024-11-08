@@ -37,6 +37,10 @@ function createlist(value) {
   setDiv.classList.add("set-list");
 
   const editButton = document.createElement("i");
+  editButton.addEventListener("click", () => {
+    listText.readOnly = false;
+  });
+
   const deleteButton = document.createElement("i");
 
   deleteButton.addEventListener("click", (e) => {
