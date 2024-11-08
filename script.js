@@ -39,6 +39,11 @@ function createlist(value) {
   const editButton = document.createElement("i");
   const deleteButton = document.createElement("i");
 
+  deleteButton.addEventListener("click", (e) => {
+    const element = e.target.parentElement.parentElement;
+    element.remove();
+  });
+
   editButton.classList.add("ri-pencil-line");
   editButton.classList.add("edit");
 
