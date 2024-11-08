@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary-color: #003844;
+  --secondary-color: #006c67;
+  --selective-yellow: #ffb100;
+  --amaranth-pink: #f194b4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sour Gummy", sans-serif;
+  /* outline: 2px solid black; */
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100dvh;
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--selective-yellow);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem;
+  gap: 1rem;
+}
+
+#to-do-list-container {
+  background: var(--secondary-color);
+  width: 40rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.add-task {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  padding: 0 0.4rem;
+  font-size: 1.2rem;
+}
+.add-task input {
+  width: 80%;
+  word-wrap: break-word;
+  padding: 1rem 1.4rem;
+  font-size: 1.2rem;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+}
+
+.add-task #add-btn {
+  padding: 1rem 1.3rem;
+  font-size: 1.2rem;
+  border-radius: 1.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--selective-yellow);
+  transition: all ease 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+    scale: 1.1;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.list {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.list li input {
+  background: none;
+  color: var(--selective-yellow);
+  outline: none;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.set-list i {
+  cursor: pointer;
+}
+
+.set-list .edit {
+  color: #fff;
+}
+
+.set-list .delete {
+  color: red;
+}
