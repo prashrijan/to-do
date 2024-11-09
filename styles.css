@@ -59,8 +59,9 @@ body {
 .error-message {
   display: none;
   color: red;
-  padding: 0 0.4rem;
+  padding: 0 1.1rem;
   font-size: 1.2rem;
+  align-self: flex-start;
 }
 
 .add-task input {
