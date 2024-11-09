@@ -8,8 +8,10 @@ listContainer.classList.add("list");
 listContainer.style.display = "none";
 toDoList.appendChild(listContainer);
 
+errorMsg.style.display = "none";
+window.addEventListener("DOMContentLoaded", loadTasksFromLocalStorage);
+
 addBtn.addEventListener("click", () => {
-  errorMsg.style.display = "none";
   const val = input.value.trim();
 
   if (!val) {
@@ -18,7 +20,7 @@ addBtn.addEventListener("click", () => {
   }
 
   addListItem(val);
-
+  saveTasksToLocalStorage();
   input.value = "";
 });
 
@@ -41,8 +43,7 @@ function addListItem(value) {
 
   li.append(listText, setDiv);
   listContainer.appendChild(li);
-  console.log(listContainer.children);
-  listContainer.style.display = "block";
+  listContainer.style.display = "flex";
 }
 
 function createButton(iconClass, actionClass, style = {}) {
@@ -71,11 +72,31 @@ listContainer.addEventListener("click", (e) => {
     listText.classList.remove("editable");
     editButton.style.display = "inline-block";
     saveButton.style.display = "none";
+    saveTasksToLocalStorage();
   } else if (button.classList.contains("delete")) {
     li.remove();
-
+    saveTasksToLocalStorage();
     if (listContainer.children.length === 0) {
       listContainer.style.display = "none";
     }
   }
 });
+
+function saveTasksToLocalStorage() {
+  const tasks = [];
+
+  document.querySelectorAll(".task-name").forEach((task) => {
+    tasks.push(task.value);
+  });
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasksFromLocalStorage() {
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+
+  tasks.forEach((task) => addListItem(task));
+  if (tasks.length > 0) {
+    listContainer.style.display = "flex";
+  }
+}
