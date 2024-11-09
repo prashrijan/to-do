@@ -19,6 +19,8 @@ addBtn.addEventListener("click", () => {
     return;
   }
 
+  errorMsg.style.display = "none";
+
   addListItem(val);
   saveTasksToLocalStorage();
   input.value = "";
