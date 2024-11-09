@@ -104,12 +104,18 @@ body {
   font-size: 1.5rem;
 }
 
-.list li input {
+.task-name {
   background: none;
   color: var(--selective-yellow);
   outline: none;
   font-size: 1.5rem;
-  border: none;
+  border: 0px;
+}
+
+.set-list {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.5rem;
 }
 
 .set-list i {
@@ -122,4 +128,10 @@ body {
 
 .set-list .delete {
   color: red;
+}
+
+.editable {
+  border: 1px solid var(--selective-yellow);
+  padding: 0.5rem;
+  border-radius: 1.1rem;
 }
