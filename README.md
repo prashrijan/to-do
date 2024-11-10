@@ -36,7 +36,7 @@ To set up this project locally, follow these steps:
 1. Clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/yourusername/todo-list-app.git
+   git clone https://github.com/prashrijan/to-do.git
 
    ```
 
