@@ -28,7 +28,12 @@ body {
 .wrapper {
   height: 100svh;
   width: 100%;
-  background: var(--primary-color);
+  background: rgb(34, 195, 190);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 195, 190, 1) 0%,
+    rgba(132, 45, 253, 1) 100%
+  );
   color: var(--selective-yellow);
   display: flex;
   align-items: center;
@@ -38,7 +43,7 @@ body {
 }
 
 #to-do-list-container {
-  background: var(--secondary-color);
+  background: #842dfd;
   width: 40rem;
   height: auto;
   display: flex;
@@ -47,6 +52,7 @@ body {
   flex-direction: column;
   padding: 2rem 2rem;
   border-radius: 1.5rem;
+  box-shadow: 10px 10px 25px -9px rgba(0, 0, 0, 0.75);
 }
 
 .add-task {
